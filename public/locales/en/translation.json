@@ -656,7 +656,16 @@
     }
   },
   "admin": {
-    "dashboard": {},
+    "dashboard": {
+      "total_orders": "Total Orders",
+      "total_revenue": "Total Revenue",
+      "invoice_sent": "Invoices Sent",
+      "total_sold": "Total Sold",
+      "warehouses": "Warehouses",
+      "pending_orders": "Pending Orders",
+      "shipped_orders": "Shipped Orders",
+      "users": "Users"
+    },
     "supplier_management": {
       "list": {
         "title": "Supplier Management",
