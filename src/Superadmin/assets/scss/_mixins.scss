@@ -1,0 +1,60 @@
+@mixin form-control($height,$borderColor){
+    border-radius: $border-radius;
+    height: $height;
+    border: 1.5px solid $borderColor;
+    background-clip: unset;
+    background-color: #ffffff;
+    outline: none;
+    padding-inline-end: 40px;
+
+    &:focus{
+        border-color: $purple;
+        box-shadow: none;
+    }
+}
+@mixin btn{
+    border-radius: 50rem;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: 500;
+    min-width: 200px;
+}
+@mixin btn-sm{
+        min-width: unset;
+        padding: 7px 15px;
+        font-size: 16px;
+        @media screen and (max-width:$mobile) {
+            font-size: 12px;   
+            padding: 7px 10px;        
+        }
+}
+@mixin transition{
+    transition: all 0.3s;
+}
+@mixin dashboard-heading{
+    color: lighten($black, 20%);
+    font-size: 20px;
+}
+@mixin tableActionIcon{
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: $purple;
+    display: inline-block;
+    position: relative;
+    
+    &::before,&::after{
+        content: '';
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background-color: $purple;
+        top: -6px;
+        left: 0;
+    }
+    &::after{
+        top: auto;
+        bottom: -6px;
+    }
+}

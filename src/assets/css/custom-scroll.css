@@ -1,0 +1,21 @@
+.custom-scrollbar {
+  max-height: 200px; /* Adjust the max-height as needed */
+  overflow-y: auto;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* Color of the scrollbar track */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #9370db; /* Color of the scrollbar thumb */
+  border-radius: 5px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #9364f0; /* Color of the scrollbar thumb on hover */
+}

@@ -1,0 +1,84 @@
+@import '../../assets/scss/variables';
+@import '../../assets/scss/mixins';
+
+.bg-light{
+    background-color: $bg-light !important;
+}
+header{
+    margin-bottom: 20px;
+    
+    .header-left{
+        @media screen and (max-width:$mobile) {
+            order: 2;            
+        }
+        .page-title{
+            @include dashboard-heading;
+        }
+    }
+    .header-right {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        @media screen and (max-width:$mobile) {
+            order: 1;            
+            justify-content: space-between;
+        }
+
+        .toolbar {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 20px;
+            @media screen and (max-width:$mobile) {
+                gap: 10px;     
+                padding-top: 7px;      
+            }
+        }
+        .profile-option {
+            display: flex;
+            height: 100%;
+            align-items: center;
+
+            hr.seperator {
+                width: 0.8px;
+                height: 100%;
+                margin-inline: 20px;
+                margin-block: 0;
+                background-color: $black;
+                opacity: 0.1;
+                @media screen and (max-width:$mobile) {
+                    margin-inline: 10px;           
+                }
+            }
+            .profile-drop-btn{
+                background-color: transparent;
+                @media screen and (max-width:$mobile) {
+                    margin-top: 4px;
+                    img{
+                        max-width: 35px;
+                        max-height: 35px;
+                    }         
+                }
+            }
+        }
+        .mobile-menu {
+            display: none;
+            width: 30px;
+            height: 30px;
+            
+            svg{
+                stroke: $black;
+            }
+            @media screen and (max-width:$tablet-sm) {
+                display: block !important;
+                margin-right: 10px;
+            }
+            @media screen and (max-width:$mobile) {
+                margin-top: 4px;
+                margin-right: 0px;
+            }
+            
+        }
+    }
+    
+}

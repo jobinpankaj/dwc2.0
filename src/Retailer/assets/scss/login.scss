@@ -1,0 +1,447 @@
+@import 'variables';
+@import 'mixins';
+
+body{
+    font-family: $font-regular;
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
+    background-color: $body-bg;
+    color: $body-color;
+}
+
+.login-setup{
+    min-height: 98vh;
+
+    h1,.h1,
+h2,.h2,
+h3,.h3,
+h4,.h4,
+h5,.h5,
+h6,.h6{
+    font-family: $font-medium;
+}
+h1,.h1{
+    font-size: 40px;
+    @media only screen and (max-width:$tablet-sm){
+        font-size: 35px;
+    }
+    @media only screen and (max-width:$mobile){
+        font-size: 32px;
+    }
+}
+h2,.h2{
+    font-size: 35px;
+    @media only screen and (max-width:$tablet-sm){
+        font-size: 30px;
+    }
+    @media only screen and (max-width:$mobile){
+        font-size: 28px;
+    }
+}
+h3,.h3{
+    font-size: 30px;
+    @media only screen and (max-width:$tablet-sm){
+        font-size: 28px;
+    }
+    @media only screen and (max-width:$mobile){
+        font-size: 26px;
+    }
+}
+h4,.h4{
+    font-size: 28px;
+    @media only screen and (max-width:$tablet-sm){
+        font-size: 26px;
+    }
+    @media only screen and (max-width:$mobile){
+        font-size: 24px;
+    }
+}
+h5,.h5{
+    font-size: 25px;
+    @media only screen and (max-width:$tablet-sm){
+        font-size: 23px;
+    }
+    @media only screen and (max-width:$mobile){
+        font-size: 20px;
+    }
+    
+}
+h6,.h6{
+    font-size: 22px;
+    @media only screen and (max-width:$tablet-sm){
+        font-size: 20px;
+    }
+    @media only screen and (max-width:$tablet-sm){
+        font-size: 18px;
+    }
+}
+ul{
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+    .login-setup-left{
+        background-color: $purple;
+        border-radius: $border-radius;
+        padding: 50px;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+        
+        &::after{
+            content: url(../images/login-texture.png);
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+
+        @media only screen and (max-width:$tablet-lg){
+            padding: 30px;
+        }
+        @media only screen and (max-width:$tablet-sm){
+            padding: 20px;
+        }
+        .logo-box {
+            width: 200px;
+            @media only screen and (max-width:$tablet-sm){
+                width: 150px;
+            }
+            @media only screen and (max-width:$mobile){
+                width: 120px;
+            }
+        }
+        .slideWrap{
+            margin-top: 20px;
+            .carousel-item{
+                color: $white;
+                p{
+                    font-size: 16px;
+                }
+            }
+            .carousel-indicators {
+                margin: 0;
+                left: 0;
+                right: auto;
+                bottom: -15px;
+
+                [data-bs-target]{
+                    width: 6px;
+                    height: 6px;
+                    border: 2px solid $white;
+                    opacity: 1;
+                    background-clip: unset;
+                }
+                .active{
+                    background-color: transparent;
+                }
+            }
+        }
+    }
+    .login-setup-right{
+        padding: 80px;
+        padding-top: 40px;
+        display: flex;
+        align-items: center;
+        @media only screen and (max-width:$tablet-lg){
+            padding: 50px;
+        }
+        @media only screen and (max-width:$tablet-sm){
+            padding: 30px;
+        }
+        .form-box{
+            hr{
+                border-color: $black;
+            }
+            p.sub-head{
+                font-size: 16px;
+                .highlight-purple{
+                    color: $purple;
+                    font-weight: bold;
+                }
+            }
+        }
+        &.create-company-profile{
+            .form-control{
+                @include form-control(40px,$black); //(height,border-color)
+            }
+            .form-box{
+                p.sub-head{
+                    font-family: $font-medium;
+                    color: lighten($color: $black, $amount: 20%);
+                }
+            }
+            .form-head {
+                font-size: 16px;
+                text-transform: capitalize;
+                color: lighten($color: $black, $amount: 20%);
+                font-family: $font-medium;
+                margin-bottom: 20px;
+            }
+        }
+        .backArrow{
+            font-family: $font-medium;
+            font-size: 18px;
+            color: lighten($color: $black, $amount: 20%);
+        }
+    }
+    form{
+        label{
+            font-family: $font-medium;
+        }
+        .form-label{
+            color: $black;
+            font-size: 14px;
+            opacity: 0.7;
+        }
+        .form-control{
+            @include form-control(50px,$black); //(height,border-color)
+    
+            &:focus{
+                + .form-field-icon{
+                    .form-abs-img{
+                        fill: $purple;
+                    }
+                    &.icon-toggle{
+                       background-position: -27px 7px;
+                    }
+                }
+            }
+            
+        }
+        .form-field-icon{
+            position: absolute;
+                right: 17px;
+                bottom: 16px;
+    
+            .form-abs-img{
+                fill: lighten($black, 20%);
+            }
+            &.icon-toggle{
+                width: 30px;
+                height: 30px;
+                background: url(../images/eye-icon.png) no-repeat;
+                background-position: 4px 7px;
+                right: 12px;
+                bottom: 11px;
+                cursor: pointer;
+                
+                &.active{
+                    background-position: -58px 7px !important;
+                }
+    
+            }
+        }
+        .form-check{
+            .form-check-input{
+                &:focus{
+                    box-shadow: none;
+                }
+                &:checked{
+                    background-color: $purple;
+                }
+            }
+            &.checkOption{
+                .form-check-input{
+                    border: 1.5px solid #151620;
+                    border-color: $black;
+                    border-radius: 0;
+                    box-shadow: none !important;
+                }
+            }
+           
+            &.form-switch{
+                .form-check-input{
+                    border: 1px solid $black;
+                        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba%28147, 112, 219, 1%29'/%3e%3c/svg%3e");
+    
+                    &:checked{
+                        background-color: $purple;
+                        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba%28255, 255, 255, 1%29'/%3e%3c/svg%3e");
+                    }
+                }
+            }
+        }
+    }
+    
+    .btn{
+        
+        @include btn;
+    
+        &.btn-purple{
+            background-color: $purple;
+            border-color: $purple;
+            color: $white;
+        
+            &:hover{
+                background-color: $purple;
+                border-color: $purple;
+                color: $white;
+                box-shadow: 0px 0px 6px lighten($purple,10%);
+            }
+        }
+        
+        &.btn-outline-black{
+            background-color: transparent;
+            border: 1px solid lighten($black, 70%);
+            &:focus{
+                box-shadow: none;
+                outline: none;
+            }
+            &.btn-sm{
+                min-width: unset;
+                padding: 7px 15px;
+                font-size: 16px;
+                @media screen and (max-width:$mobile) {
+                    font-size: 12px;   
+                    padding: 7px 10px;        
+                }
+            }
+        }
+    }
+    .position-abs {
+        position: absolute;
+    }
+    a{
+        color: $black;
+        text-decoration: none;
+        cursor: pointer;
+        &:hover{
+            color: $purple;
+        }
+    }
+    .modal{
+        button.btn-close {
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            background: url(../images/modal-close.svg) center no-repeat;
+            opacity: 1;
+        }
+        .modal-header{
+            justify-content: center;
+        }
+        .modal-body{
+            font-size: 16px;
+        }
+    }
+    .bg-purple{
+        background-color: $purple !important;
+    }
+    .bg-green{
+        background-color: $green !important;
+    }
+    .bg-yellow{
+        background-color: $yellow !important;
+    }
+    .height-inherit{
+        height: inherit !important;
+    }
+    .height-100{
+        height: 100% !important;
+    }
+    .card{
+        background-color: #ffffff;
+        box-shadow: 0px 1px 20px rgba(68, 97, 215, 0.1);
+    }
+    select{
+        &.btn.btn-outline-black{
+            &.btn-sm{
+                font-size: 12px;
+                padding: 5px 10px;
+            }
+        }
+    }
+    .passcodeInput {
+        width: 59px;
+        height: 59px;
+        padding: 0;
+        &:not(:last-child){
+            margin-right: 20px;
+        }
+        @media screen and (max-width:$mobile) {
+            width: 50px;
+            height: 50px;   
+        }
+        
+        .form-control{
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            padding: 10px;
+        }    
+    }
+    .resendOtp{
+        a{
+            color: $purple;
+            font-weight: bold;
+        }
+    }
+    a{
+        .svg-img{
+            margin-right: 7px;
+            svg{
+                fill: $black;
+            }
+        }
+        &:hover{
+            .svg-img{
+                svg{
+                    fill: $purple;
+                }
+            }
+        }
+    }
+    
+    .custom-atag {
+        color: #231F20;
+        text-decoration: none;
+    }
+    
+    .custom-atag:hover {
+        color: #9370DB;
+        cursor: pointer;
+    }
+    .highlight-purple{
+        color: $purple;
+        font-weight: bold;
+    }
+    
+    .form-box p:nth-of-type(3), .form-box h3:nth-of-type(2){
+        margin-top: 1em;
+    }
+    
+    .otp-field{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+    
+    .otp-field div{
+        display: flex;
+        flex-direction: row;
+        width: 60%;
+    }
+    
+    .otp-field div input {
+        width: 60%;
+        padding: 0;
+        text-align: center;
+    }
+    
+    .otp-field div span {
+        align-items: center;
+        display: flex;
+        padding: 0 10px;
+        padding-left: 15px;
+    }
+    
+    .error-label{
+        color: red;
+    }
+}
+
+

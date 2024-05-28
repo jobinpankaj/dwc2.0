@@ -1,0 +1,55 @@
+// Colors
+$white:#fefefe;
+$black:#231F20;
+$purple:#9370DB;
+$purple-light:#8160C5;
+$yellow:#EFCC12;
+$green: #27C26C;
+$red: #ff0000;
+$orange: #FF9900;
+
+$bg-light: rgba(217, 217, 217, 0.14);
+
+
+@font-face {
+    font-family: 'ubuntumedium';
+    src: url('../fonts/ubuntu-medium-webfont.woff2') format('woff2'), url('../fonts/ubuntu-medium-webfont.woff') format('woff');
+    font-weight: normal; font-style: normal;
+}
+
+@font-face {
+    font-family: 'ubunturegular';
+    src: url('../fonts/ubuntu-regular-webfont.woff2') format('woff2'), url('../fonts/ubuntu-regular-webfont.woff') format('woff');
+    font-weight: normal; font-style: normal;
+}
+@font-face {
+    font-family: 'ubuntubold';
+    src: url('../fonts/ubuntu-bold-webfont.woff2') format('woff2'), url('../fonts/ubuntu-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+$font-regular: 'ubunturegular';
+$font-medium: 'ubuntumedium';
+$font-bold: 'ubuntubold';
+
+
+// Border Radius Default
+$border-radius: 10px;
+
+
+// Body Default
+$body-bg: $white;
+$body-color: $black;
+
+
+// Screen Breakpoints
+$mobile: 767px;
+$tablet-sm: 991px;
+$tablet-lg: 1024px;
+$laptop: 1200px;
+$laptop-lg: 1400px;
+
+
+

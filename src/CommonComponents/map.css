@@ -1,0 +1,48 @@
+.mapBox {
+  position: relative;
+}
+.mapBox > div {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  left: 0;
+  right: 0;
+}
+
+.route-manage .mapBox {
+  margin-top: 0; 
+}
+
+.map-fix {
+  padding: 20px 20px;
+  position:relative !important;
+  min-height: 70vh;
+}
+.map-fix > div {
+  min-height: 70vh;
+}
+
+/* dashboard map */
+
+.retailer-dashboard .map-box .map-fix {
+  padding: 0;
+  min-height: auto;
+}
+.retailer-dashboard .map-box .map-fix > div {
+  height: 240px !important;
+  min-height: auto;
+}
+
+@media screen and (max-width:767px) {
+  .mapBox{
+    height: 100%;
+  }
+  .map-fix {
+    min-height: 50vh;
+  }
+  /* dashboard map */
+.retailer-dashboard .map-box .map-fix > div {
+  height: 250px !important;
+  min-height: auto;
+}
+}

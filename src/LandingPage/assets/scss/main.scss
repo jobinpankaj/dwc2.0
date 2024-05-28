@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Ubuntu:ital,wght@0,400;0,700;1,500&display=swap');
+$monoton:'Monoton', cursive;
+$Ubuntu:'Ubuntu', sans-serif;
+// Colors
+$white:#fff;
+$light-white:#fefefe;
+$black:#231F20;
+$purple:#9370DB;
+$purple-light:#8160C5;
+$yellow:#EFCC12;
+$green: #27C26C;
+$red: #ff0000;
+$orange: #FF9900;
+
+$bg-light: rgba(217, 217, 217, 0.14);
+
+.item{
+    font-family: $Ubuntu;
+}
+.bannerHeaing{
+    font-family: $monoton;
+    font-size: 60px;
+    line-height: 72px;
+    max-width: 360px;
+    margin-bottom: 20px;
+}
+.subHeading{
+    font-size: 45px;
+    line-height: 60px;
+    font-weight: 700;
+}
+.alignPadding{ 
+    padding-inline:140px;
+    position: relative;
+    z-index: 1;
+}
+.userAccess{
+    .dropdown-menu{
+        padding:25px;
+        border-radius:10px;
+        -webkit-border-radius:10px;
+        -moz-border-radius:10px;
+        box-shadow: 7px 14px 19px rgba(0, 0, 0, 0.05);
+        translate:0px 9px !important;
+        .dropdown-item{
+            color:$black;
+            opacity: 0.6;
+            font-size: 16px;
+            &:hover{
+                opacity: 1;
+            }
+        }
+        &::before{
+            content:'';
+            bottom:100%;
+            left:30px;
+            border-top:10px solid transparent;
+            border-right:10px solid transparent;
+            border-left:10px solid transparent;
+            border-bottom: 10px solid $white;
+            position: absolute;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+        }
+    }
+}
+.userCreditioal{ position: relative;
+    &::after{
+        content: "";
+        height: 12px;
+        width: 1px;
+        background-color: #fff;
+        left: calc(100% + 12px);
+        top: calc(50% - 6px);
+        position: absolute;
+        display: block;
+    }
+}
+.btn{
+    padding-inline: 0;
+    padding-block: 8px;
+    border-color: transparent;
+    background-color: transparent;
+    &.btnImg{
+       img{
+         margin-inline-end: 8px;
+         vertical-align: text-bottom;
+        }
+    }
+    &::after{
+        top:2px;
+        right:-5px;
+        position: relative;
+    }
+    &:hover{
+        background-color: $purple;
+        border-color: $purple;
+    }
+
+}
+.searchForm {
+     position: relative;
+    .searchfield{
+        border:0.8px solid #fff; 
+        border-radius: 4px; 
+        padding:10px 40px 10px 20px; 
+        position: relative; 
+        z-index: 0; 
+        background-color: transparent; 
+        min-width: 300px;
+        color: $white;
+        font-weight: 500;
+        font-size: 16px;
+        &::-webkit-input-placeholder{
+            color: $white;
+        }
+        &::-moz-placeholder{
+            color: $white;
+        }
+        &::placeholder{
+            color: $white;
+        }
+    }
+    .searchIcon{ 
+        position: absolute;
+        right: 1px;
+        top: 1px;
+        bottom: 0px;
+        z-index: 1;
+        padding: 0px 16px;
+        min-width: fit-content;
+        border-radius: 0;
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+        height: calc(100% - 2px);
+        display: flex;
+        align-items: center;
+    }
+}
+.header{ 
+    width: 100%; 
+    position: fixed; 
+    top:0; left:0; right:0; 
+    padding-block:12px;
+    // background: rgba(0,0,0,0.3);
+    z-index: 999;
+    margin-bottom: 0;
+    .HeaderRight{ 
+        gap:0 20px
+    }
+}
+.mainBox{ 
+    height: 100vh; 
+    max-height: fit-content; 
+    min-height: 100vh;
+    position: relative;
+    .BannerImg{
+        position: absolute;
+        top:0; 
+        left:0;
+        right:0;
+        bottom:0;
+        img{
+            height: 100vh;
+            width: 100%;
+        }
+    }
+    .bannerHeaing{
+        color: $white;
+    }
+    .alignPadding{
+        background-color: #00000085;
+    }
+}
+.QuoteBox{
+    display: flex;
+    flex-flow: column;
+    gap: 15px;
+    padding-block: 20px 0;
+    p{
+        font-size: 25px;
+        line-height: 35px;
+        color: $white;
+        font-weight: 500;
+        font-style: italic;
+        position: relative;
+        &:first-child, &:last-child{
+            &::after{
+                content: '';
+                width:40px;
+                height: 40px;
+                position: relative;
+                display: inline-block;
+            }
+            &:first-child{
+                &::after{
+                    background: url(../images/topq.png) no-repeat center;     
+                    top: -60px;
+                    right: 56%;
+                }
+            }
+            &:last-child{
+                &::after{background: url(../images/bottomq.png) no-repeat center; bottom: 0; right: 0;}
+            }
+        }
+    }
+
+}

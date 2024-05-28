@@ -1,0 +1,594 @@
+@font-face {
+  font-family: "ubuntumedium";
+  src: url("../fonts/ubuntu-medium-webfont.woff2") format("woff2"), url("../fonts/ubuntu-medium-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "ubunturegular";
+  src: url("../fonts/ubuntu-regular-webfont.woff2") format("woff2"), url("../fonts/ubuntu-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "ubuntubold";
+  src: url("../fonts/ubuntu-bold-webfont.woff2") format("woff2"), url("../fonts/ubuntu-bold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  font-family: "ubunturegular";
+  font-size: 14px;
+  padding: 0;
+  margin: 0;
+  background-color: #fefefe;
+  color: #231F20;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  font-family: "ubuntumedium";
+}
+
+h1, .h1 {
+  font-size: 40px;
+}
+@media only screen and (max-width: 991px) {
+  h1, .h1 {
+    font-size: 35px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  h1, .h1 {
+    font-size: 32px;
+  }
+}
+
+h2, .h2 {
+  font-size: 35px;
+}
+@media only screen and (max-width: 991px) {
+  h2, .h2 {
+    font-size: 30px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  h2, .h2 {
+    font-size: 28px;
+  }
+}
+
+h3, .h3 {
+  font-size: 30px;
+}
+@media only screen and (max-width: 991px) {
+  h3, .h3 {
+    font-size: 28px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  h3, .h3 {
+    font-size: 26px;
+  }
+}
+
+h4, .h4 {
+  font-size: 28px;
+}
+@media only screen and (max-width: 991px) {
+  h4, .h4 {
+    font-size: 26px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  h4, .h4 {
+    font-size: 24px;
+  }
+}
+
+h5, .h5 {
+  font-size: 25px;
+}
+@media only screen and (max-width: 991px) {
+  h5, .h5 {
+    font-size: 23px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  h5, .h5 {
+    font-size: 20px;
+  }
+}
+
+h6, .h6 {
+  font-size: 22px;
+}
+@media only screen and (max-width: 991px) {
+  h6, .h6 {
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  h6, .h6 {
+    font-size: 18px;
+  }
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+form label {
+  font-family: "ubuntumedium";
+}
+form .form-label {
+  color: #231F20;
+  font-size: 14px;
+  opacity: 0.7;
+}
+form .form-control,
+form .form-select {
+  border-radius: 10px;
+  height: 50px;
+  border: 1.5px solid #231F20;
+  background-clip: unset;
+  outline: none;
+  padding-inline-end: 40px;
+  height: 41px;
+  border-color: #594f51;
+}
+form .form-control:focus,
+form .form-select:focus {
+  border-color: #9370DB;
+  box-shadow: none;
+}
+form .form-control:focus + .form-field-icon .form-abs-img,
+form .form-select:focus + .form-field-icon .form-abs-img {
+  fill: #9370DB;
+}
+form .form-control:focus + .form-field-icon.icon-toggle,
+form .form-select:focus + .form-field-icon.icon-toggle {
+  background-position: -27px 7px;
+}
+form .form-field-icon {
+  position: absolute;
+  right: 17px;
+  bottom: 16px;
+}
+form .form-field-icon .form-abs-img {
+  fill: #594f51;
+}
+form .form-field-icon.icon-toggle {
+  width: 30px;
+  height: 30px;
+  background: url(../images/eye-icon.png) no-repeat;
+  background-position: 4px 7px;
+  right: 12px;
+  bottom: 11px;
+  cursor: pointer;
+}
+form .form-field-icon.icon-toggle.active {
+  background-position: -58px 7px !important;
+}
+form .form-check .form-check-input:focus {
+  box-shadow: none;
+}
+form .form-check .form-check-input:checked {
+  background-color: #9370DB;
+}
+form .form-check.checkOption .form-check-input {
+  border: 1.5px solid #151620;
+  border-color: #231F20;
+  border-radius: 0;
+  box-shadow: none !important;
+}
+form .form-check.form-switch .form-check-input {
+  border: 1px solid #231F20;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba%28147, 112, 219, 1%29'/%3e%3c/svg%3e");
+}
+form .form-check.form-switch .form-check-input:checked {
+  background-color: #9370DB;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba%28255, 255, 255, 1%29'/%3e%3c/svg%3e");
+}
+
+.btn {
+  border-radius: 50rem;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: 500;
+  min-width: 200px;
+  padding: 9px 20px;
+  font-size: 14px;
+}
+.btn.btn-purple {
+  background-color: #9370DB;
+  border-color: #9370DB;
+  color: #fefefe;
+}
+.btn.btn-purple:hover {
+  background-color: #9370DB;
+  border-color: #9370DB;
+  color: #fefefe;
+  box-shadow: 0px 0px 6px #b299e5;
+}
+.btn.btn-purple.btn-sm {
+  min-width: unset;
+  padding: 7px 15px;
+  font-size: 16px;
+}
+@media screen and (max-width: 767px) {
+  .btn.btn-purple.btn-sm {
+    font-size: 12px;
+    padding: 7px 10px;
+  }
+}
+.btn.btn-outline-black {
+  background-color: transparent;
+  border: 1px solid #d6d1d2;
+}
+.btn.btn-outline-black:focus {
+  box-shadow: none;
+  outline: none;
+}
+.btn.btn-outline-black.btn-sm {
+  min-width: unset;
+  padding: 7px 15px;
+  font-size: 16px;
+}
+@media screen and (max-width: 767px) {
+  .btn.btn-outline-black.btn-sm {
+    font-size: 12px;
+    padding: 7px 10px;
+  }
+}
+
+.position-relative {
+  position: relative;
+}
+
+.position-abs {
+  position: absolute;
+}
+
+a {
+  color: #231F20;
+  text-decoration: none;
+  cursor: pointer;
+}
+a:hover {
+  color: #160040;
+}
+
+.modal button.btn-close {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  background: url(../images/modal-close.svg) center no-repeat;
+  opacity: 1;
+}
+.modal .modal-header {
+  justify-content: center;
+}
+.modal .modal-body {
+  font-size: 16px;
+}
+
+.bg-purple {
+  background-color: #9370DB !important;
+}
+
+.bg-green {
+  background-color: #27C26C !important;
+}
+
+.bg-yellow {
+  background-color: #EFCC12 !important;
+}
+
+.height-inherit {
+  height: inherit !important;
+}
+
+.height-100 {
+  height: 100% !important;
+}
+
+.card {
+  background-color: #ffffff;
+  box-shadow: 0px 1px 20px rgba(68, 97, 215, 0.1);
+}
+
+select.btn.btn-outline-black.btn-sm {
+  font-size: 12px;
+  padding: 5px 10px;
+}
+
+table thead {
+  background-color: rgba(138, 60, 172, 0.06);
+  font-size: 11px;
+  font-family: "ubuntumedium";
+}
+table td {
+  font-size: 12px;
+}
+table.table-striped tbody tr td {
+  background: rgba(248, 243, 250, 0.5);
+}
+table.table-striped tbody tr:nth-child(odd) td {
+  --bs-table-accent-bg: #fff;
+}
+
+.badge {
+  padding: 5px 10px;
+  font-size: 12px;
+}
+.badge.text-bg-green {
+  background-color: rgba(202, 251, 197, 0.5);
+  color: #27C26C;
+}
+.badge.text-bg-red {
+  background-color: rgba(255, 69, 69, 0.05);
+  color: #ff0000;
+}
+.badge.text-bg-orange {
+  background-color: rgba(231, 214, 61, 0.25);
+  color: #FF9900;
+}
+
+.card-top-filter-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media only screen and (max-width: 767px) {
+  .card-top-filter-box {
+    flex-flow: column;
+    align-items: flex-start;
+  }
+  .card-top-filter-box .filter-box {
+    flex-wrap: wrap;
+  }
+}
+.card-top-filter-box .search-table {
+  max-width: 300px;
+}
+@media only screen and (max-width: 767px) {
+  .card-top-filter-box .search-table {
+    margin-bottom: 15px;
+    max-width: unset;
+    width: 100%;
+  }
+}
+.card-top-filter-box .search-table .search-input {
+  background: rgba(138, 60, 172, 0.02) url(../images/search-Icon.png) no-repeat;
+  background-position: 10px center;
+  border: 1px solid rgba(36, 39, 49, 0.1);
+  border-radius: 30px;
+  width: 100%;
+  height: 36px;
+  padding: 5px 10px 5px 30px;
+}
+
+.page-top-filter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.page-top-filter .right-filter .btn.dropdown-toggle {
+  width: auto;
+  min-width: unset;
+  border: none !important;
+}
+.page-top-filter .right-filter .dropdown-menu {
+  width: 350px;
+  padding: 20px;
+}
+@media screen and (max-width: 767px) {
+  .page-top-filter .right-filter .dropdown-menu {
+    width: 300px;
+  }
+}
+
+.width-auto {
+  width: auto !important;
+  min-width: unset !important;
+}
+
+.border-purple {
+  border: 1px solid #9370DB !important;
+}
+
+.page-wrap {
+  height: 100vh;
+}
+@media screen and (max-width: 1024px) {
+  .page-wrap .main {
+    width: 70%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .page-wrap .main {
+    width: 100%;
+  }
+}
+
+.filter-box {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.filter-box.position-abs {
+  right: 0;
+  top: -13px;
+}
+.filter-box .btn.btn-sm {
+  font-size: 14px;
+}
+@media screen and (max-width: 767px) {
+  .filter-box .btn.btn-sm {
+    font-size: 12px;
+  }
+}
+
+.tab-link-row {
+  margin-top: 10px;
+}
+@media screen and (max-width: 767px) {
+  .tab-link-row {
+    display: flex;
+    flex-flow: column;
+    margin: 0;
+  }
+  .tab-link-row .nav-tabs {
+    order: 2;
+  }
+  .tab-link-row .filter-box.position-abs {
+    order: 1;
+    text-align: right;
+    margin-bottom: 10px;
+    position: static;
+    justify-content: flex-end;
+  }
+}
+
+.nav-tabs .nav-item:not(:last-child) {
+  margin-right: 10px;
+}
+.nav-tabs .nav-item .nav-link {
+  font-size: 16px;
+  font-family: "ubuntumedium";
+  padding-inline: 5px;
+  padding-block: 3px;
+  border: none;
+  color: #a69b9e;
+}
+.nav-tabs .nav-item .nav-link:hover, .nav-tabs .nav-item .nav-link.active {
+  color: #9370DB;
+  border-bottom: 2px solid #9370DB;
+}
+
+.amount-status li {
+  position: relative;
+  padding-left: 15px;
+}
+.amount-status li:not(:last-child) {
+  margin-bottom: 10px;
+}
+.amount-status li::before {
+  position: absolute;
+  content: "";
+  width: 10px;
+  height: 10px;
+  top: 3px;
+  left: 0;
+}
+.amount-status li.pending::before {
+  background-color: #EFCC12;
+}
+.amount-status li.approved::before {
+  background-color: #9370DB;
+}
+.amount-status li.paid::before {
+  background-color: #27C26C;
+}
+.amount-status li .value {
+  font-size: 11.2px;
+  font-family: "ubuntubold";
+  opacity: 0.7;
+}
+.amount-status li .status {
+  font-size: 10px;
+  color: #594f51;
+}
+
+.badge.sales-data {
+  background-color: #FAF9F9;
+  border: 1px solid #eeecec;
+}
+.badge.sales-data label {
+  font-size: 12px;
+  opacity: 0.7;
+  margin-bottom: 8px;
+}
+.badge.sales-data .amount {
+  font-size: 16px;
+  font-family: "ubuntubold";
+}
+
+table td {
+  vertical-align: middle;
+}
+table .topProd .name {
+  font-size: 16px;
+  font-family: "ubuntubold";
+  opacity: 0.8;
+  margin-bottom: 5px;
+}
+table .topProd .desc {
+  font-size: 12px;
+  opacity: 0.6;
+}
+table .prodPrice {
+  font-size: 12px;
+  font-family: "ubuntubold";
+  opacity: 0.7;
+}
+table .table-action .dropdown-toggle {
+  border: none;
+  background-color: transparent;
+}
+table .table-action .dropdown-toggle:before {
+  border: none;
+}
+table .table-action .dropdown-toggle span {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #9370DB;
+  display: inline-block;
+  position: relative;
+}
+table .table-action .dropdown-toggle span::before, table .table-action .dropdown-toggle span::after {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #9370DB;
+  top: -6px;
+  left: 0;
+}
+table .table-action .dropdown-toggle span::after {
+  top: auto;
+  bottom: -6px;
+}
+table .table-action .dropdown-menu {
+  padding: 0;
+}
+table .table-action .dropdown-menu li:last-child {
+  position: relative;
+}
+table .table-action .dropdown-menu li:last-child:before {
+  content: "";
+  position: absolute;
+  border: 0.8px solid #231F20;
+  opacity: 0.5;
+  width: 90%;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+table .table-action .dropdown-menu li .dropdown-item {
+  font-size: 14px;
+  padding-block: 7px;
+}
+table .table-action .dropdown-menu li .dropdown-item:hover {
+  background-color: rgba(138, 60, 172, 0.06);
+  color: #9370DB;
+}/*# sourceMappingURL=dashboard.css.map */
