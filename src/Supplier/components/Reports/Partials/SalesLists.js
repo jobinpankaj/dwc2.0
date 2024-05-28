@@ -325,311 +325,313 @@ const SalesLists = ({ img, token, supplierName, usersData }) => {
           {!!fullProductListDataLoading && <Loader />}
           {!fullProductListDataLoading && (
             <>
-              <Form noValidate validated={validated} onSubmit={handleSubmit}>
-                <Row>
-                  <Col className="report-img">
-                    <img src={img} alt="" />
-                  </Col>
+            <Form noValidate validated={validated} onSubmit={handleSubmit}>
+              <Row>
+                <Col className="report-img">
+                  <img src={img} alt="" />
+                </Col>
 
-                  <Col>
-                  {SupplierBname.map((values) => (
-                    <h5>{values?.company_name} </h5>
-                  ))}
-                  {t("modal.list_of_sales")}
-                    <br />
-                {t("modal.find_out_sales_lists")}
-                  </Col>
-                  <Col xs={6}></Col>
-                </Row>
+                <Col>
+                {SupplierBname.map((values) => (
+                  <h5>{values?.company_name} </h5>
+                ))}
+                {t("modal.list_of_sales")}
+                  <br />
+              {t("modal.find_out_sales_lists")}
+                </Col>
+                <Col xs={6}></Col>
+              </Row>
 
-                <hr />
-                <Row className="mb-3">
-                  <Form.Group as={Col} controlId="from_date">
-                    <Form.Label>{t("modal.from")}</Form.Label>
-                    <Form.Control
-                      type="date"
-                      name="from_date"
-                      onChange={handleChange}
-                      required
-                    />
-                    <Form.Control.Feedback type="invalid">
-                        {t("modal.from")} {t("modal.is_required")}.
-                    </Form.Control.Feedback>
-                  </Form.Group>
+              <hr />
+              <Row className="mb-3">
+                <Form.Group as={Col} controlId="from_date">
+                  <Form.Label>{t("modal.from")}</Form.Label>
+                  <Form.Control
+                    type="date"
+                    name="from_date"
+                    onChange={handleChange}
+                    required
+                  />
+                  <Form.Control.Feedback type="invalid">
+                      {t("modal.from")} {t("modal.is_required")}.
+                  </Form.Control.Feedback>
+                </Form.Group>
 
-                  <Form.Group as={Col} controlId="to_date">
-                <Form.Label>{t("modal.to")}</Form.Label>
-                    <Form.Control
-                      type="date"
-                      name="to_date"
-                      onChange={handleChange}
-                      required
-                    />
-                    <Form.Control.Feedback type="invalid">
-                    {t("modal.to")} {t("modal.is_required")}.
-                    </Form.Control.Feedback>
-                  </Form.Group>
-                  <Form.Group as={Col} controlId="supplier">
-                  <Form.Label>{t("modal.by_supplier")}</Form.Label>
-                    <Form.Control
-                      as="select"
-                      required
-                      name="supplier"
-                      onChange={(e) => handleChange(e)}
-                      value={formData?.supplier}
-                    >
-                    <option value="">{t("modal.choose")}</option>
-                      {fullSalesData &&
-                        fullSalesData[0]?.map((values) => (
-                          <option
-                            value={values?.company_name}
-                            data-key={values?.user_id}
-                          >
-                            {values?.company_name}
-                          </option>
-                        ))}
-                    </Form.Control>
-                    <Form.Control.Feedback
-                      className="error-label"
-                      type="invalid"
-                    >
-                      {t("modal.by_supplier")} {t("modal.is_required")}.
-                    </Form.Control.Feedback>
-                  </Form.Group>
-                </Row>
-                {/*}
-            <Row className="mb-3">
-              <Form.Group as={Col} controlId="product-type">
-                <Form.Label>By Frequency</Form.Label>
-                <Form.Control
-                  as="select"
-                  name="product_type"
-                  required
-                  onChange={(e) => handleChange(e)}
-                >
-                  <option value="">Choose...</option>
-                </Form.Control>
-                <Form.Control.Feedback className="error-label" type="invalid">
-                  Frequency is required.
-                </Form.Control.Feedback>
-              </Form.Group>
+                <Form.Group as={Col} controlId="to_date">
+              <Form.Label>{t("modal.to")}</Form.Label>
+                  <Form.Control
+                    type="date"
+                    name="to_date"
+                    onChange={handleChange}
+                    required
+                  />
+                  <Form.Control.Feedback type="invalid">
+                  {t("modal.to")} {t("modal.is_required")}.
+                  </Form.Control.Feedback>
+                </Form.Group>
+              </Row>
+                              <Row className="mb-3">
+                <Form.Group as={Col} controlId="supplier">
+                <Form.Label>{t("modal.by_supplier")}</Form.Label>
+                  <Form.Control
+                    as="select"
+                    required
+                    name="supplier"
+                    onChange={(e) => handleChange(e)}
+                    value={formData?.supplier}
+                  >
+                  <option value="">{t("modal.choose")}</option>
+                    {fullSalesData &&
+                      fullSalesData[0]?.map((values) => (
+                        <option
+                          value={values?.company_name}
+                          data-key={values?.user_id}
+                        >
+                          {values?.company_name}
+                        </option>
+                      ))}
+                  </Form.Control>
+                  <Form.Control.Feedback
+                    className="error-label"
+                    type="invalid"
+                  >
+                    {t("modal.by_supplier")} {t("modal.is_required")}.
+                  </Form.Control.Feedback>
+                </Form.Group>
+              {/*}
+          <Row className="mb-3">
             <Form.Group as={Col} controlId="product-type">
-            <Form.Label>Select</Form.Label>
-              {['checkbox'].map((type) => (
-              <div key={`inline-${type}`} className="mb-3">
-                <Form.Check
-             inline
-             label="QTY Boxes"
-             name="group1"
-             type={type}
-             id={`inline-${type}-1`}
-           />
-           <Form.Check
-             inline
-             label="Revenue"
-             name="group1"
-             type={type}
-             id={`inline-${type}-2`}
-           />
-           <Form.Check
-             inline
-             label="Discount"
-             type={type}
-             id={`inline-${type}-3`}
-           />
-           <Form.Check
+              <Form.Label>By Frequency</Form.Label>
+              <Form.Control
+                as="select"
+                name="product_type"
+                required
+                onChange={(e) => handleChange(e)}
+              >
+                <option value="">Choose...</option>
+              </Form.Control>
+              <Form.Control.Feedback className="error-label" type="invalid">
+                Frequency is required.
+              </Form.Control.Feedback>
+            </Form.Group>
+          <Form.Group as={Col} controlId="product-type">
+          <Form.Label>Select</Form.Label>
+            {['checkbox'].map((type) => (
+            <div key={`inline-${type}`} className="mb-3">
+              <Form.Check
            inline
-           label="Rank"
+           label="QTY Boxes"
            name="group1"
            type={type}
-           id={`inline-${type}-4`}
+           id={`inline-${type}-1`}
          />
          <Form.Check
            inline
            label="Revenue"
            name="group1"
            type={type}
-           id={`inline-${type}-5`}
+           id={`inline-${type}-2`}
          />
          <Form.Check
            inline
-           label="Last order"
+           label="Discount"
            type={type}
-           id={`inline-${type}-6`}
+           id={`inline-${type}-3`}
          />
          <Form.Check
-           inline
-           label="Avarage order value"
-           type={type}
-           id={`inline-${type}-7`}
-         />
-         </div>
-            ))}
-                </Form.Group>
-            </Row>*/}
-                <Row className="mb-3">
+         inline
+         label="Rank"
+         name="group1"
+         type={type}
+         id={`inline-${type}-4`}
+       />
+       <Form.Check
+         inline
+         label="Revenue"
+         name="group1"
+         type={type}
+         id={`inline-${type}-5`}
+       />
+       <Form.Check
+         inline
+         label="Last order"
+         type={type}
+         id={`inline-${type}-6`}
+       />
+       <Form.Check
+         inline
+         label="Avarage order value"
+         type={type}
+         id={`inline-${type}-7`}
+       />
+       </div>
+          ))}
+              </Form.Group>
+          </Row>*/}
 
-                  {/*}          <Form.Group as={Col} controlId="product-type">
-            <Form.Label>Select</Form.Label>
-              {['checkbox'].map((type) => (
-              <div key={`inline-${type}`} className="mb-3">
-                <Form.Check
-             inline
-             label="Trend"
-             name="group1"
-             type={type}
-             id={`inline-${type}-1`}
-           />
-           <Form.Check
-             inline
-             label="Action"
-             name="group1"
-             type={type}
-             id={`inline-${type}-2`}
-           />
-           <Form.Check
-             inline
-             label="City"
-             type={type}
-             id={`inline-${type}-3`}
-           />
-           <Form.Check
+                {/*}          <Form.Group as={Col} controlId="product-type">
+          <Form.Label>Select</Form.Label>
+            {['checkbox'].map((type) => (
+            <div key={`inline-${type}`} className="mb-3">
+              <Form.Check
            inline
-           label="All"
+           label="Trend"
            name="group1"
            type={type}
-           id={`inline-${type}-4`}
+           id={`inline-${type}-1`}
          />
-         </div>
-            ))}
-                </Form.Group> */}
-                  <Form.Group as={Col} controlId="retailer">
-                <Form.Label>{t("modal.by_retailer")}</Form.Label>
-                    <Form.Control
-                      as="select"
-                      name="retailer"
-                      onChange={(e) => handleChange(e)}
-                      value={formData?.retailer}
-                    >
-                      {" "}
-                    <option value="">{t("modal.choose")}</option>
-                      {retailerData?.map((values) => (
-                        <option
-                          value={values?.business_name}
-                          data-key={values?.user_id}
-                        >
-                          {values?.business_name}
-                        </option>
-                      ))}
-                    </Form.Control>
-                    {/* <Form.Control.Feedback className="error-label" type="invalid">
-                    Please select an option.
-                  </Form.Control.Feedback> */}
-                  </Form.Group>
-                </Row>
-                <Row className="mb-3">
-                  <Form.Group as={Col} controlId="Product_type">
-                        <Form.Label>{t("modal.product_type")}</Form.Label>
-                    <Form.Control
-                      as="select"
-                      name="product_type"
-                      onChange={(e) => handleChange(e)}
-                      value={formData?.product_type}
-                    >
-                      {" "}
-                      <option value="">Choose...</option>
-                      {productTypeData?.map((values) => (
-                        <option
-                          value={values?.product_type}
-                          data-key={values?.user_id}
-                        >
-                          {values?.product_type}
-                        </option>
-                      ))}
-                    </Form.Control>
-                  </Form.Group>
-                  <Form.Group as={Col} controlId="Product-format">
-                <Form.Label>{t("modal.product_format")}</Form.Label>
-                    <Form.Control
-                      as="select"
-                      name="product_format"
-                      onChange={(e) => handleChange(e)}
-                      value={formData?.product_format}
-                    >
-                      {" "}
-                <option value="">{t("modal.choose")}</option>
-                      {productFormatData?.map((values) => (
-                        <option value={values?.name} data-key={values?.user_id}>
-                          {values?.name}
-                        </option>
-                      ))}
-                    </Form.Control>
-                  </Form.Group>
-                  <Form.Group as={Col} controlId="by-user">
-                  <Form.Label>{t("modal.by_users")}</Form.Label>
-                    <Form.Control
-                      as="select"
-                      required
-                      name="by_user"
-                      onChange={(e) => handleChange(e)}
-                    >
-                    <option value="">{t("modal.choose")}</option>
-                    <option value="all">All</option>
-                    {ByUsers.map((values) => (
-                          <option value={values?.id}>
-                            {values?.first_name} {values?.last_name}
-                          </option>
-                        ))}
-                    </Form.Control>
-                    <Form.Control.Feedback
-                      className="error-label"
-                      type="invalid"
-                    >
-                      {t("modal.by_users")} {t("modal.is_required")}.
-                    </Form.Control.Feedback>
-                  </Form.Group>
-                </Row>
-                <Row className="mb-3">
-                  <Form.Group as={Col} controlId="file-type">
-                      <Form.Label>{t("modal.file_type")}</Form.Label>
-                    <Form.Control
-                      as="select"
-                      name="file_type"
-                      onChange={(e) => handleChange(e)}
-                    >
-                      {" "}
-              <option value="">{t("modal.choose")}</option>
-                      <option value="xlsx">XLSX</option>
-                      <option value="csv">CSV</option>
-                      <option value="pdf">PDF</option>
-                    </Form.Control>
-                    {/* <Form.Control.Feedback className="error-label" type="invalid">
+         <Form.Check
+           inline
+           label="Action"
+           name="group1"
+           type={type}
+           id={`inline-${type}-2`}
+         />
+         <Form.Check
+           inline
+           label="City"
+           type={type}
+           id={`inline-${type}-3`}
+         />
+         <Form.Check
+         inline
+         label="All"
+         name="group1"
+         type={type}
+         id={`inline-${type}-4`}
+       />
+       </div>
+          ))}
+              </Form.Group> */}
+                <Form.Group as={Col} controlId="retailer">
+              <Form.Label>{t("modal.by_retailer")}</Form.Label>
+                  <Form.Control
+                    as="select"
+                    name="retailer"
+                    onChange={(e) => handleChange(e)}
+                    value={formData?.retailer}
+                  >
+                    {" "}
+                  <option value="">{t("modal.choose")}</option>
+                    {retailerData?.map((values) => (
+                      <option
+                        value={values?.business_name}
+                        data-key={values?.user_id}
+                      >
+                        {values?.business_name}
+                      </option>
+                    ))}
+                  </Form.Control>
+                  {/* <Form.Control.Feedback className="error-label" type="invalid">
                   Please select an option.
                 </Form.Control.Feedback> */}
-                  </Form.Group>
-                  <Form.Group as={Col} controlId="language">
-                    <Form.Label>{t("modal.language")}</Form.Label>
-                    <Form.Control
-                      as="select"
-                      name="language"
-                      onChange={(e) => handleChange(e)}
-                    >
-                      {" "}
-            <option value="">{t("modal.choose")}</option>
-                      <option value="CAeng"> ENG </option>
-                      <option value="CAfr"> FRA </option>
-                    </Form.Control>
-                  </Form.Group>
+                </Form.Group>
                 </Row>
+                <Row className="mb-3">
+                <Form.Group as={Col} controlId="Product_type">
+                      <Form.Label>{t("modal.product_type")}</Form.Label>
+                  <Form.Control
+                    as="select"
+                    name="product_type"
+                    onChange={(e) => handleChange(e)}
+                    value={formData?.product_type}
+                  >
+                    {" "}
+                    <option value="">Choose...</option>
+                    {productTypeData?.map((values) => (
+                      <option
+                        value={values?.product_type}
+                        data-key={values?.user_id}
+                      >
+                        {values?.product_type}
+                      </option>
+                    ))}
+                  </Form.Control>
+                </Form.Group>
+                <Form.Group as={Col} controlId="Product-format">
+              <Form.Label>{t("modal.product_format")}</Form.Label>
+                  <Form.Control
+                    as="select"
+                    name="product_format"
+                    onChange={(e) => handleChange(e)}
+                    value={formData?.product_format}
+                  >
+                    {" "}
+              <option value="">{t("modal.choose")}</option>
+                    {productFormatData?.map((values) => (
+                      <option value={values?.name} data-key={values?.user_id}>
+                        {values?.name}
+                      </option>
+                    ))}
+                  </Form.Control>
+                </Form.Group>
+                </Row>
+                <Row className="mb-3">
+                <Form.Group as={Col} controlId="by-user">
+                <Form.Label>{t("modal.by_users")}</Form.Label>
+                  <Form.Control
+                    as="select"
+                    required
+                    name="by_user"
+                    onChange={(e) => handleChange(e)}
+                  >
+                  <option value="">{t("modal.choose")}</option>
+                  <option value="all">All</option>
+                  {ByUsers.map((values) => (
+                        <option value={values?.id}>
+                          {values?.first_name} {values?.last_name}
+                        </option>
+                      ))}
+                  </Form.Control>
+                  <Form.Control.Feedback
+                    className="error-label"
+                    type="invalid"
+                  >
+                    {t("modal.by_users")} {t("modal.is_required")}.
+                  </Form.Control.Feedback>
+                </Form.Group>
+              </Row>
+              <Row className="mb-3">
+                <Form.Group as={Col} controlId="file-type">
+                    <Form.Label>{t("modal.file_type")}</Form.Label>
+                  <Form.Control
+                    as="select"
+                    name="file_type"
+                    onChange={(e) => handleChange(e)}
+                  >
+                    {" "}
+            <option value="">{t("modal.choose")}</option>
+                    <option value="xlsx">XLSX</option>
+                    <option value="csv">CSV</option>
+                    <option value="pdf">PDF</option>
+                  </Form.Control>
+                  {/* <Form.Control.Feedback className="error-label" type="invalid">
+                Please select an option.
+              </Form.Control.Feedback> */}
+                </Form.Group>
+                <Form.Group as={Col} controlId="language">
+                  <Form.Label>{t("modal.language")}</Form.Label>
+                  <Form.Control
+                    as="select"
+                    name="language"
+                    onChange={(e) => handleChange(e)}
+                  >
+                    {" "}
+          <option value="">{t("modal.choose")}</option>
+                    <option value="CAeng"> ENG </option>
+                    <option value="CAfr"> FRA </option>
+                  </Form.Control>
+                </Form.Group>
+              </Row>
 
-                <button
-                  type="submit"
-                  class="btn btn-success w-auto"
-                  disabled={loading}
-                >
-    <option value="">{t("modal.generate_list")}</option>
-                </button>
-              </Form>
+              <button
+                type="submit"
+                class="btn btn-success w-auto"
+                disabled={loading}
+              >
+  <option value="">{t("modal.generate_list")}</option>
+              </button>
+            </Form>
               <hr />
               {!!getTableDataLoading && <Loader />}
               {!getTableDataLoading && (
