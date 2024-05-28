@@ -369,6 +369,8 @@ const SalesLists = ({ img, token, supplierName, usersData }) => {
                     {t("modal.to")} {t("modal.is_required")}.
                     </Form.Control.Feedback>
                   </Form.Group>
+                </Row>
+                                <Row className="mb-3">
                   <Form.Group as={Col} controlId="supplier">
                   <Form.Label>{t("modal.by_supplier")}</Form.Label>
                     <Form.Control
@@ -396,7 +398,6 @@ const SalesLists = ({ img, token, supplierName, usersData }) => {
                       {t("modal.by_supplier")} {t("modal.is_required")}.
                     </Form.Control.Feedback>
                   </Form.Group>
-                </Row>
                 {/*}
             <Row className="mb-3">
               <Form.Group as={Col} controlId="product-type">
@@ -467,7 +468,6 @@ const SalesLists = ({ img, token, supplierName, usersData }) => {
             ))}
                 </Form.Group>
             </Row>*/}
-                <Row className="mb-3">
 
                   {/*}          <Form.Group as={Col} controlId="product-type">
             <Form.Label>Select</Form.Label>
@@ -526,8 +526,8 @@ const SalesLists = ({ img, token, supplierName, usersData }) => {
                     Please select an option.
                   </Form.Control.Feedback> */}
                   </Form.Group>
-                </Row>
-                <Row className="mb-3">
+                  </Row>
+                  <Row className="mb-3">
                   <Form.Group as={Col} controlId="Product_type">
                         <Form.Label>{t("modal.product_type")}</Form.Label>
                     <Form.Control
@@ -565,6 +565,8 @@ const SalesLists = ({ img, token, supplierName, usersData }) => {
                       ))}
                     </Form.Control>
                   </Form.Group>
+                  </Row>
+                  <Row className="mb-3">
                   <Form.Group as={Col} controlId="by-user">
                   <Form.Label>{t("modal.by_users")}</Form.Label>
                     <Form.Control
